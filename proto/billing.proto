@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service BillingService {
+  rpc Charge (BillingRequest) returns (BillingResponse);
+}
+
+message BillingRequest {
+  string userId = 1;
+  float amount = 2;
+}
+
+message BillingResponse {
+  bool success = 1;
+  string transactionId = 2;
+}
